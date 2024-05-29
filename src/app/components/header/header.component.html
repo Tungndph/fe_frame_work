@@ -1,0 +1,39 @@
+<header>
+  <a href="index.html" style="text-decoration: none; color: #000">
+    <div class="logo">
+      <img src="../../assets/img/logo.png" alt="" />
+      <h2>Furniro</h2>
+    </div>
+  </a>
+  <nav>
+    <ul>
+      <li>
+        <a href="./index.html">Home</a>
+        <a routerLink="/shop">Shop</a>
+        <a href="">About</a>
+        <a href="">Contact</a>
+      </li>
+    </ul>
+  </nav>
+  <div class="search-container">
+    <!-- header/header.component.html -->
+    <form (ngSubmit)="updateSearch(filterValue)">
+      <div class="form-input">
+        <input
+          [(ngModel)]="filterValue"
+          name="filterValue"
+          placeholder="Search..."
+          (ngModelChange)="updateSearch(filterValue)"
+        />
+        <button type="submit" class="search-btn">
+          <i class="bx bx-search"></i>
+        </button>
+      </div>
+    </form>
+  </div>
+  <div class="icons">
+    <a routerLink="/login"><i style="color: #000" class="bx bxs-user"></i></a>
+    <i class="bx bx-heart"></i>
+    <a href=""><i style="color: #000" class="bx bxs-cart-alt"></i></a>
+  </div>
+</header>

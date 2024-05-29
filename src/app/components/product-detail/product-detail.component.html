@@ -1,0 +1,113 @@
+<div class="container">
+  <app-header></app-header>
+  <div class="prd-detail" *ngIf="product">
+    <div class="sp1">
+      <img
+        [src]="product.image"
+        alt=""
+        width="465px"
+        height="520px"
+        id="main-img"
+      />
+    </div>
+    <div class="infor">
+      <h2>{{ product.title }}</h2>
+
+      <p class="price">Giá: {{ product.price }} vnđ</p>
+
+      <div class="danh-gia">
+        <div class="sao">
+          <div
+            class="crop"
+            [style.width.px]="(product.rating.rate * 90) / 5"
+            title="rating"
+          >
+            <div style="width: 90px">
+              <span class="fa fa-star text-warning"></span>
+              <span class="fa fa-star text-warning"></span>
+              <span class="fa fa-star text-warning"></span>
+              <span class="fa fa-star text-warning"></span>
+              <span class="fa fa-star text-warning"></span>
+            </div>
+          </div>
+        </div>
+        <span class="so-luong-danh-gia"
+          >{{ product.rating.count }} Customer Review</span
+        >
+      </div>
+      <p class="text-sp">
+        {{ product.description }}
+      </p>
+      <div class="color">
+        <p>Color:</p>
+        <button></button>
+        <button></button>
+        <button></button>
+      </div>
+      <div class="size">
+        <p>Size:</p>
+        <div class="size-btn">
+          <button>L</button>
+          <button>XL</button>
+          <button>XS</button>
+        </div>
+      </div>
+      <div class="cart">
+        <div class="quantity">
+          <button>-</button>
+          <p>1</p>
+          <button>+</button>
+        </div>
+        <div class="shop">
+          <a href="./cart.html"><button>Add To Cart</button></a>
+        </div>
+        <div class="compare">
+          <button>Compare</button>
+        </div>
+      </div>
+      <hr
+        style="
+          border: none;
+          height: 1px;
+          background-color: #ccc;
+          margin: 30px 0;
+        "
+      />
+
+      <div class="content">
+        <p class="sku">
+          SKU : <span>SS00{{ product.id }}</span>
+        </p>
+        <p class="sku">
+          Category : <span>{{ product.category }}</span>
+        </p>
+        <p class="sku">Tags : <span>Sofa, Chair, Home, Shop</span></p>
+        <p class="share">
+          Share :
+          <span>
+            <a
+              href="https://www.linkedin.com/in/midhun-v-s"
+              style="--i: 7"
+              target="_blank"
+              ><i class="bx bxl-facebook"></i
+            ></a>
+            <a
+              href="https://instagram.com/midhun_021"
+              style="--i: 8"
+              target="_blank"
+              ><i class="bx bxl-linkedin"></i
+            ></a>
+            <a
+              href="https://www.youtube.com/@Unlucky_Coder21"
+              style="--i: 9"
+              target="_blank"
+              ><i class="bx bxl-twitter"></i
+            ></a>
+          </span>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <app-footer></app-footer>
+</div>

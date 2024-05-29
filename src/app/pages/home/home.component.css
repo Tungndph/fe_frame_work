@@ -1,0 +1,413 @@
+.container1 {
+  width: 1200px;
+  margin: 0 auto;
+}
+header {
+  width: 1200px;
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+.logo {
+  display: flex;
+}
+.logo img {
+  width: 100px;
+}
+h2 {
+  margin-top: 40px;
+}
+nav {
+  margin-top: 40px;
+}
+nav ul li {
+  list-style: none;
+}
+nav ul li a:hover {
+  background: #000;
+  color: #fff;
+}
+nav ul li a {
+  text-decoration: none;
+  padding: 0 30px;
+  font-size: 18px;
+  color: #000;
+}
+
+.icons {
+  margin-top: 40px;
+  margin-right: 20px;
+}
+.icons i {
+  width: 30px;
+  padding: 0 25px;
+}
+.banner {
+  width: 100%;
+}
+
+.banner .post-img {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+
+.banner .post-img::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../../../assets/img/banner.jpg");
+
+  background-position: center center;
+  background-repeat: no-repeat;
+  filter: blur(2px);
+  background-size: cover;
+  z-index: -1;
+}
+
+.banner .post-img p.text,
+.banner .post-img h1.text {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #000;
+  text-align: center;
+}
+
+.banner .post-img p.text {
+  margin-top: 8%;
+  font-size: 18px;
+}
+
+.banner .post-img h1.text {
+  font-size: 24px;
+}
+
+/* NEW */
+.discount-circle {
+  position: absolute;
+  top: 25px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  /* Màu cam của hình tròn */
+  border-radius: 50%;
+  display: flex;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+
+  font-size: 14px;
+}
+
+.product-1 .discount-circle {
+  background-color: #e97171;
+}
+
+.product-2 .discount-circle {
+  background-color: #e97171;
+}
+
+.product-3 .discount-circle {
+  background-color: #e97171;
+}
+.product-4 .discount-circle {
+  background-color: #9bcf53;
+}
+.actions {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+.content1 .product {
+  position: relative;
+}
+
+.content1 .product:hover .actions {
+  visibility: visible;
+}
+
+.content1 .product img {
+  transition: transform 0.3s ease;
+}
+
+.content1 .product:hover img {
+  transform: scale(1.1);
+}
+
+.content1 .actions {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  visibility: hidden;
+}
+
+.content1 .actions button {
+  margin-right: 10px;
+}
+
+/* Thêm CSS cho các nút khi hover */
+.content1 .actions button:hover {
+  background-color: #ccc;
+}
+.content1 .product img {
+  transition: transform 0.3s ease, filter 0.3s ease; /* Thêm transition cho thuộc tính filter */
+}
+
+.content1 .product:hover img {
+  transform: scale(1.1);
+  filter: grayscale(100%); /* Chuyển ảnh sang màu đen */
+}
+hr {
+  border-bottom: 1px solid #000;
+  width: 100%;
+  margin-top: 18px;
+}
+.new-content {
+  margin-top: 20px;
+  display: flex;
+}
+.new-content {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.content1 {
+  width: 100%;
+  padding-right: 14px;
+}
+.content1 img {
+  width: 290px;
+  height: 300px;
+  object-fit: cover;
+}
+.new1 {
+  background: bisque;
+  padding: 20px;
+}
+.new1 h4 {
+  margin-bottom: 10px;
+}
+
+.new p {
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.new-price {
+  font-weight: bold;
+  font-size: 18px;
+}
+.new-price del {
+  font-weight: normal;
+}
+
+.product {
+  cursor: pointer;
+  position: relative;
+
+  overflow: hidden;
+}
+
+.product:hover .actions {
+  opacity: 1;
+}
+
+.actions {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.actions button {
+  margin: 5px;
+  padding: 10px;
+  cursor: pointer;
+}
+.icon-1 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.cart {
+  background-color: #fff;
+  color: #000;
+  width: 200px;
+  border: none;
+}
+
+.like {
+  background-color: #fff;
+  color: #000;
+  border: none;
+}
+.like.clicked {
+  background-color: red; /* Màu sắc khi nút đã được click */
+}
+
+.share {
+  background-color: #fff;
+  color: #000;
+  border: none;
+}
+
+.shop {
+  margin-top: 30px;
+}
+.shop-img {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.shop-img img {
+  width: 600px;
+  height: 400px;
+  padding: 10px;
+  object-fit: cover;
+}
+
+.blog {
+  margin-top: 20px;
+}
+.blog-post {
+  display: flex;
+  margin-top: 40px;
+  justify-content: space-between;
+}
+.blog-post img {
+  width: 600px;
+}
+.post-content {
+  padding: 40px;
+}
+.post-content h3 {
+  color: #3a3a3a;
+}
+.post-content p {
+  /* Font Properties */
+  font-family: Arial, sans-serif; /* Specify a preferred font family, fallback to sans-serif */
+  font-size: 16px; /* Set the font size */
+  line-height: 1.5; /* Adjust line spacing for better readability */
+
+  /* Text Formatting */
+  color: #898989; /* Set the text color */
+  text-align: justify; /* Justify the text for a clean, even alignment */
+
+  /* Margins and Padding */
+  margin: 20px auto; /* Add top and bottom margin, center horizontally */
+  /* Add some padding inside the paragraph */
+}
+.post-content h4 {
+  text-align: end;
+}
+
+.group {
+  padding: 0 50px;
+  margin-top: 40px;
+  margin-bottom: 30px;
+  width: 100%;
+  height: 100px;
+  background-color: #faf3ea;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.group-post {
+  margin-top: 30px;
+  display: flex;
+  margin-left: 60px;
+  padding: 0 0px;
+}
+.post-img {
+  width: 40px;
+  height: 40px;
+}
+.grout-post-content {
+  padding-left: 18px;
+}
+.grout-post-content h3 {
+  font-size: 18px;
+}
+.grout-post-content p {
+  font-size: 15px;
+  margin-top: 5px;
+  color: #898989;
+}
+
+footer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.ft-content {
+  margin-left: 150px;
+}
+.ft-content p {
+  color: #9f9f9f;
+}
+.link {
+  margin-left: 50px;
+}
+.link h4 {
+  color: #9f9f9f;
+  margin-left: 20px;
+}
+.link nav > ul > li {
+  padding-bottom: 15px;
+}
+.link nav > ul > li > a {
+  margin-left: -9px;
+}
+.help h4 {
+  color: #9f9f9f;
+  margin-left: 20px;
+}
+.help nav > ul > li {
+  padding-bottom: 15px;
+}
+.help nav > ul > li > a {
+  margin-left: -9px;
+}
+.hr-end {
+  width: 1200px;
+  margin: 0 auto;
+}
+.ft-end {
+  margin-left: 160px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.email-text {
+  margin-top: 20px;
+}
+.email-p {
+  border-bottom: 2px solid #000;
+  font-size: 14px;
+}
+.email-text {
+  display: flex;
+}
+.email-sub {
+  margin-left: 10px;
+  border-bottom: 2px solid #000;
+  font-size: 14px;
+}
+
+.btn-primary:hover {
+  background-color: red;
+  border-color: red; /* Adjust if you want the border to change as well */
+}

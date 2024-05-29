@@ -1,0 +1,834 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+header {
+  width: 1200px;
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+}
+
+.logo img {
+  width: 100px;
+}
+
+h2 {
+  margin-top: 40px;
+}
+
+nav {
+  margin-top: 40px;
+}
+
+nav ul li {
+  list-style: none;
+}
+nav ul li a:hover {
+  background: #000;
+  color: #fff;
+}
+nav ul li a {
+  text-decoration: none;
+  padding: 0 20px;
+  font-size: 18px;
+  color: #000;
+  font-weight: 500;
+}
+
+.icons {
+  margin-top: 40px;
+  margin-right: 20px;
+}
+
+.icons i {
+  width: 30px;
+  padding: 0 20px;
+}
+
+.discount-circle {
+  position: absolute;
+  top: 25px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  /* Màu cam của hình tròn */
+  border-radius: 50%;
+  display: flex;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+
+  font-size: 14px;
+}
+
+.product-1 .discount-circle {
+  background-color: #e97171;
+}
+
+.product-2 .discount-circle {
+  background-color: #e97171;
+}
+
+.product-3 .discount-circle {
+  background-color: #e97171;
+}
+.product-4 .discount-circle {
+  background-color: #9bcf53;
+}
+.actions {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+.content1 .product {
+  position: relative;
+}
+
+.content1 .product:hover .actions {
+  visibility: visible;
+}
+
+.content1 .product img {
+  transition: transform 0.3s ease;
+}
+
+.content1 .product:hover img {
+  transform: scale(1.1);
+}
+
+.content1 .actions {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  visibility: hidden;
+}
+
+.content1 .actions button {
+  margin-right: 10px;
+}
+
+/* Thêm CSS cho các nút khi hover */
+.content1 .actions button:hover {
+  background-color: #ccc;
+}
+.content1 .product img {
+  transition: transform 0.3s ease, filter 0.3s ease; /* Thêm transition cho thuộc tính filter */
+}
+
+.content1 .product:hover img {
+  transform: scale(1.1);
+  filter: grayscale(100%); /* Chuyển ảnh sang màu đen */
+}
+hr {
+  border-bottom: 1px solid #000;
+  width: 100%;
+  margin-top: 18px;
+}
+.new-content {
+  margin-top: 20px;
+}
+.new-content {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.content1 {
+  width: 100%;
+  padding-right: 14px;
+}
+.content1 img {
+  width: 290px;
+  height: 300px;
+  object-fit: cover;
+}
+.new1 {
+  background: bisque;
+  padding: 20px;
+}
+.new1 h4 {
+  margin-bottom: 10px;
+}
+
+.new p {
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.new-price {
+  font-weight: bold;
+  font-size: 18px;
+}
+.new-price del {
+  font-weight: normal;
+}
+.product {
+  cursor: pointer;
+  position: relative;
+
+  overflow: hidden;
+}
+
+.product:hover .actions {
+  opacity: 1;
+}
+
+.actions {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.actions button {
+  margin: 5px;
+  padding: 10px;
+  cursor: pointer;
+}
+.icon-1 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.cart {
+  background-color: #fff;
+  color: #000;
+  width: 200px;
+  border: none;
+}
+
+.like {
+  background-color: #fff;
+  color: #000;
+  border: none;
+}
+
+.share {
+  background-color: #fff;
+  color: #000;
+  border: none;
+}
+
+.breadcrumb {
+  list-style: none;
+  padding-top: 35px;
+  margin-left: 200px;
+  display: flex;
+  /* Make breadcrumb items in a row */
+}
+
+.breadcrumb li {
+  display: inline-flex;
+  align-items: center;
+  /* Align text and image vertically */
+  padding: 0 10px;
+}
+
+.breadcrumb li a {
+  text-decoration: none;
+  color: #000;
+}
+
+.breadcrumb li:hover a {
+  color: #ccc;
+  /* Change color on hover */
+}
+
+.breadcrumb li img {
+  margin-left: 5px;
+  /* Add spacing between text and image */
+  width: 40px;
+  /* Adjust image width as needed */
+  height: 40px;
+  /* Adjust image height as needed */
+}
+
+.breadcrumb h5 {
+  margin-top: 10px;
+  border-left: 3px solid #9f9f9f;
+  padding: 0 20px;
+  font-size: 15px;
+}
+
+.link {
+  height: 100px;
+  background-color: #f9f1e7;
+}
+
+/* Thiết lập cấu trúc cho các ảnh sản phẩm phụ */
+
+.prd-detail {
+  display: flex;
+  padding: 0 20px;
+}
+
+.sp1 {
+  display: flex;
+  margin-top: 30px;
+  margin-left: 30px;
+}
+
+.sp1 p {
+  display: flex;
+  flex-direction: column;
+}
+
+.sp1 p img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 20px;
+  background-color: #ffe3ca;
+  object-fit: contain;
+  border-radius: 20%;
+  /* Khoảng cách giữa các ảnh sản phẩm phụ */
+}
+
+/* Thiết lập cho ảnh sản phẩm chính */
+#main-img {
+  width: 425px;
+  height: 450px;
+
+
+  object-fit: cover;
+  padding: 10px;
+  border-radius: 5%;
+}
+
+/* Phần thông tin chung */
+.infor {
+  margin-top: 20px;
+  margin-left: 90px;
+}
+.infor .price {
+  color: #9f9f9f;
+  margin-top: 10px;
+}
+.danh-gia {
+  display: flex;
+  align-items: center;
+  margin-bottom: 18px;
+  margin-top: 20px;
+}
+
+.sao {
+  display: flex;
+  margin-right: 20px;
+}
+
+.sao input {
+  display: none;
+}
+
+.sao label {
+  cursor: pointer;
+  color: #f9c528;
+
+  margin: 0 5px;
+  transition: 0.3s;
+}
+
+.sao label:hover {
+  color: #f9c528;
+}
+
+.sao input:checked + label {
+  color: #f9c528;
+}
+
+
+.so-luong-danh-gia {
+  margin-left: 10px;
+  font-size: 15px;
+  border-left: 3px solid #9f9f9f;
+  padding: 0 20px;
+  color: #999;
+  margin-left: 20px;
+}
+.text-sp {
+  letter-spacing: 1px;
+  padding-right: 20px;
+  font-size: 15px;
+  word-spacing: 1px;
+}
+.size {
+  margin-top: 20px;
+}
+
+.size-btn {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px; /* Khoảng cách giữa các nút si.size-btn */
+}
+
+.size-btn button {
+  background-color: #ffe3ca;
+  color: #000;
+  border: none;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* Phần si.size-btn - nếu bạn muốn màu nền và màu chữ khác nhau khi hover */
+.size-btn button:hover {
+  background-color: #45a049;
+}
+
+/* Phần si.size-btn - nếu bạn muốn thêm hiệu ứng khi được chọn */
+.size-btn button:active {
+  transform: translateY(2px);
+}
+
+.color {
+  margin-top: 20px;
+  align-items: center;
+}
+
+.color p {
+  margin-right: 10px;
+}
+
+.color button {
+  margin-top: 20px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 5px;
+  border: none; /* Màu viền của button */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Điều chỉnh màu sắc của button tùy thuộc vào ý muốn của bạn */
+.color button:nth-child(1) {
+  background-color: #816dfa; /* Màu đỏ */
+}
+
+.color button:nth-child(2) {
+  background-color: #000000; /* Màu xanh lá cây */
+}
+
+.color button:nth-child(3) {
+  background-color: #b88e2f; /* Màu xanh dương */
+}
+.color button:hover {
+  background-color: red; /* Màu khác khi di chuột vào */
+}
+
+/* Phần Cart */
+.cart {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+}
+
+/* Phần Quantity */
+.quantity {
+  display: flex;
+  background-color: #feece2; /* Màu nền của .quantity */
+  padding: 10px; /* Phần đệm để tạo khoảng cách xung quanh nội dung */
+  border-radius: 5px;
+  align-items: center;
+}
+
+.quantity button {
+  width: 30px;
+
+  margin-right: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.quantity p {
+  margin: 0 10px;
+  font-size: 16px;
+}
+
+/* Phần Shop và Compare */
+.shop button,
+.compare button {
+  background-color: #feece2;
+  color: #1f2544;
+  padding: 10px 20px;
+  margin: 0 10px;
+  width: 150px;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* Thêm hiệu ứng khi hover vào nút Shop và Compare */
+.shop button:hover,
+.compare button:hover {
+  background-color: #45a049;
+}
+
+.sku {
+  margin-bottom: 10px;
+  color: #9f9f9f;
+}
+.share {
+  margin-top: 20px;
+  color: #9f9f9f;
+}
+.share span a {
+  color: #fff;
+  border-radius: 50%;
+  background-color: #000;
+  padding: 5px; /* Màu chữ đen cho các liên kết */
+  margin: 0 5px;
+}
+
+/* Nếu bạn muốn thêm hiệu ứng khi di chuột vào */
+p span a:hover {
+  text-decoration: underline; /* Gạch chân khi di chuột vào liên kết */
+}
+
+.des {
+  margin-top: 20px;
+}
+.des-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.des-title h4 {
+  padding: 0 20px;
+}
+.des-title .tt2 {
+  color: #9f9f9f;
+}
+
+.des-text {
+  max-width: 900px; /* Đặt chiều rộng tối đa */
+  margin: 0 auto; /* Căn giữa theo chiều ngang */
+  padding: 20px; /* Phần đệm để tạo khoảng cách xung quanh nội dung */
+}
+
+.text1,
+.text2 {
+  color: #9f9f9f;
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+/* Nếu bạn muốn làm nổi bật một số đoạn văn bản cụ thể */
+.text2 strong {
+  font-weight: bold;
+  color: #4caf50; /* Màu sắc làm nổi bật */
+}
+
+/* Phần Description Images */
+.des-img {
+  display: flex;
+  justify-content: space-around;
+  max-width: 800px; /* Đặt chiều rộng tối đa */
+  margin: 20px auto; /* Căn giữa theo chiều ngang và thêm khoảng cách top/bottom */
+}
+
+.des-img img {
+  border-radius: 5%;
+  background-color: #ffe3ca;
+  width: 48%; /* Đặt chiều rộng của ảnh */
+  height: auto; /* Đảm bảo chiều cao tự động để giữ tỷ lệ khung hình */
+  margin-bottom: 20px; /* Khoảng cách dưới ảnh */
+}
+
+.text-prd {
+  text-align: center;
+  line-height: 54px;
+}
+
+.discount-circle {
+  position: absolute;
+  top: 25px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  /* Màu cam của hình tròn */
+  border-radius: 50%;
+  display: flex;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+
+  font-size: 14px;
+}
+
+.product-1 .discount-circle {
+  background-color: #e97171;
+}
+
+.product-2 .discount-circle {
+  background-color: #e97171;
+}
+
+.product-3 .discount-circle {
+  background-color: #e97171;
+}
+.product-4 .discount-circle {
+  background-color: #9bcf53;
+}
+.actions {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+.content1 .product {
+  position: relative;
+}
+
+.content1 .product:hover .actions {
+  visibility: visible;
+}
+
+.content1 .product img {
+  transition: transform 0.3s ease;
+}
+
+.content1 .product:hover img {
+  transform: scale(1.1);
+}
+
+.content1 .actions {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  visibility: hidden;
+}
+
+.content1 .actions button {
+  margin-right: 10px;
+}
+
+/* Thêm CSS cho các nút khi hover */
+.content1 .actions button:hover {
+  background-color: #ccc;
+}
+.content1 .product img {
+  transition: transform 0.3s ease, filter 0.3s ease; /* Thêm transition cho thuộc tính filter */
+}
+
+.content1 .product:hover img {
+  transform: scale(1.1);
+  filter: grayscale(100%); /* Chuyển ảnh sang màu đen */
+}
+hr {
+  border-bottom: 1px solid #000;
+  width: 100%;
+  margin-top: 18px;
+  color: #c7c8cc;
+}
+
+.new-content {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.content1 {
+  width: 100%;
+  padding-right: 14px;
+}
+.content1 img {
+  width: 290px;
+  height: 300px;
+  object-fit: cover;
+}
+.new1 {
+  background: bisque;
+  padding: 20px;
+}
+.new1 h4 {
+  margin-bottom: 10px;
+}
+
+.new p {
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.new-price {
+  font-weight: bold;
+  margin-top: 5px;
+  font-size: 15px;
+}
+.new-price del {
+  font-weight: normal;
+}
+.product {
+  cursor: pointer;
+  position: relative;
+
+  overflow: hidden;
+}
+
+.product:hover .actions {
+  opacity: 1;
+}
+
+.actions {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.actions button {
+  margin: 5px;
+  padding: 10px;
+  cursor: pointer;
+}
+.icon-1 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.cart {
+  background-color: #fff;
+  color: #000;
+  width: 200px;
+  border: none;
+}
+
+.like {
+  background-color: #fff;
+  color: #000;
+  border: none;
+}
+
+.share {
+  background-color: #fff;
+  color: #000;
+  border: none;
+}
+
+/* Cho nút "Show More" */
+.btn {
+  display: flex;
+  justify-content: center; /* Căn giữa theo chiều ngang */
+  align-items: center; /* Căn giữa theo chiều dọc */
+  margin: 30px;
+}
+.show-more {
+  text-align: center;
+  background-color: #fff; /* Màu nền */
+  color: #b88e2f; /* Màu chữ */
+  padding: 10px 20px; /* Đặt giảm đều khoảng cách xung quanh nút */
+  font-size: 16px; /* Kích thước chữ */
+  border: 1px solid #b88e2f; /* Loại bỏ đường viền */
+  border-radius: 5px; /* Bo tròn góc */
+  cursor: pointer; /* Biến con chuột thành mũi tên khi di chuột vào nút */
+  transition: background-color 0.3s; /* Hiệu ứng màu nền khi hover */
+}
+
+/* Hiệu ứng hover */
+.show-more:hover {
+  background-color: #e0ccbe; /* Màu nền khi hover */
+  color: #000;
+}
+
+footer {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.ft-content {
+  margin-left: 150px;
+}
+.ft-content p {
+  color: #9f9f9f;
+}
+.links {
+  margin-left: 50px;
+}
+.links h4 {
+  color: #9f9f9f;
+  margin-left: 10px;
+}
+.links nav > ul > li {
+  padding-bottom: 15px;
+}
+.links nav > ul > li > a {
+  margin-left: -9px;
+}
+.help h4 {
+  color: #9f9f9f;
+  margin-left: 10px;
+}
+.help nav > ul > li {
+  padding-bottom: 15px;
+}
+.help nav > ul > li > a {
+  margin-left: -9px;
+}
+.hr-end {
+  width: 1200px;
+  margin: 0 auto;
+}
+.ft-end {
+  margin-left: 160px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.email-text {
+  margin-top: 20px;
+}
+.email-p {
+  border-bottom: 2px solid #000;
+  font-size: 14px;
+}
+.email-text {
+  display: flex;
+}
+.email-sub {
+  margin-left: 10px;
+  border-bottom: 2px solid #000;
+  font-size: 14px;
+}
+  .crop {
+    overflow: hidden;
+  }

@@ -1,0 +1,111 @@
+import { Component, inject, OnInit } from '@angular/core';
+import { Product, ProductAdd } from '../../../../../types/Products';
+import { ProductService } from '../../../../services/product.service';
+import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
+import { CommonModule, NgFor } from '@angular/common';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { CategoryService } from '../../../../services/category.service';
+import { Category } from '../../../../../types/Category';
+import Swal from 'sweetalert2';
+import { switchMap } from 'rxjs';
+
+@Component({
+  selector: 'app-update-product',
+  standalone: true,
+  imports: [FormsModule, NgFor, ReactiveFormsModule, CommonModule],
+  templateUrl: './update-product.component.html',
+  styleUrls: ['./update-product.component.css']
+})
+export class UpdateProductComponent implements OnInit {
+  loading: boolean = false;
+  product: Product | undefined;
+  router = inject(Router);
+  productId!: string;
+  productService = inject(ProductService);
+  file: any;
+  preview: any;
+  categoryList: Category[] = [];
+
+  updateProductForm: FormGroup = new FormGroup({
+    title: new FormControl('', [Validators.required, Validators.minLength(6)]),
+    price: new FormControl('', [Validators.required, Validators.min(0)]),
+    description: new FormControl('', Validators.required),
+    image: new FormControl('', Validators.required),
+    category: new FormControl('', Validators.required),
+    isShowing: new FormControl(true)
+  });
+
+  constructor(
+    private categoryService: CategoryService,
+    private route: ActivatedRoute,
+  ) {}
+
+ ngOnInit(): void {
+    // Lấy ID từ route và gọi dịch vụ để lấy thông tin sản phẩm
+    this.route.params.pipe(
+      switchMap(params => {
+        this.productId = params['id'];
+        return this.productService.getDetailProductById(this.productId);
+      })
+    ).subscribe(
+      product => {
+        // Cập nhật dữ liệu vào form
+        this.updateProductForm.patchValue(product);
+      },
+      error => {
+        // Hiển thị thông báo lỗi và ghi log lỗi
+        console.error('Error fetching product details:', error);
+      }
+    );
+
+    // Fetch categories
+    this.categoryService.getCategoryListAdmin().subscribe(
+      categories => {
+        this.categoryList = categories;
+      },
+      error => {
+        console.error('Error fetching categories:', error);
+      }
+    );
+  }
+
+  onSubmit() {
+    console.log(this.updateProductForm.value);
+    this.loading = true;
+    if (!this.productId) return;
+    this.productService.updateProductById(this.productId, this.updateProductForm.value).subscribe({
+      next: () => {
+        Swal.fire({
+          icon: 'success',
+          title: 'Cập nhật sản phẩm thành công',
+          showConfirmButton: false,
+          timer: 1000,
+          timerProgressBar: true,
+        });
+        this.router.navigate(['/admin/products/list']);
+      },
+      error: (error) => {
+        console.error(error.message);
+        Swal.fire({
+          icon: 'error',
+          title: 'Lỗi',
+          text: 'Đã có lỗi xảy ra trong quá trình cập nhật sản phẩm.',
+        });
+        this.loading = false;
+      },
+    });
+  }
+
+  uploadFile(event: any) {
+    this.file = event.target.files[0];
+    const reader = new FileReader();
+    reader.readAsDataURL(this.file);
+    reader.onload = () => {
+      this.preview = reader.result;
+      this.updateProductForm.patchValue({
+        image: this.preview
+      });
+    };
+  }
+}

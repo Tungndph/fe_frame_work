@@ -1,0 +1,94 @@
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+header {
+  width: 1200px;
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+.logo {
+  display: flex;
+}
+.logo img {
+  width: 100px;
+}
+h2 {
+  margin-top: 40px;
+}
+nav {
+  margin-top: 40px;
+}
+nav ul li {
+  list-style: none;
+}
+nav ul li a:hover {
+  background: #000;
+  color: #fff;
+}
+nav ul li a {
+  text-decoration: none;
+  padding: 0 30px;
+  font-size: 18px;
+  color: #000;
+}
+
+.icons {
+  margin-top: 40px;
+  margin-right: 20px;
+}
+.icons i {
+  width: 30px;
+  padding: 0 25px;
+}
+.search-container {
+  margin-top: 35px;
+}
+.search-container form {
+  display: flex;
+}
+.search-container .form-control {
+  margin-right: 5px;
+}
+
+.search-container .btn {
+  align-items: center;
+  justify-content: center;
+  padding: 6px 12px;
+}
+
+.search-container .btn .bx-search {
+  font-size: 16px;
+}
+
+.search-container .form-input {
+  display: flex;
+  align-items: center;
+  height: 36px;
+}
+ .form-input input {
+  flex-grow: 1;
+  padding: 0 16px;
+  height: 100%;
+  border: none;
+  background: var(--grey);
+  border-radius: 36px 0 0 36px;
+  outline: none;
+  width: 100%;
+  color: var(--dark);
+}
+ form .form-input button {
+  width: 36px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--blue);
+  color: var(--light);
+  font-size: 18px;
+  border: none;
+  outline: none;
+  border-radius: 0 36px 36px 0;
+  cursor: pointer;
+}

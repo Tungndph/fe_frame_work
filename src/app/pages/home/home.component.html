@@ -1,0 +1,169 @@
+<app-header></app-header>
+<div class="banner">
+  <div
+    class="post-img"
+    style="
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    "
+  >
+    <h1 class="text">TRANG CHỦ</h1>
+    <p class="text">Home</p>
+  </div>
+</div>
+<div class="container1">
+  <div class="content">
+    <div class="new">
+      <h2>NEW</h2>
+      <hr />
+
+      <div class="row">
+        <div
+          class="col-md-3 py-5"
+          *ngFor="
+            let p of productList
+              | paginate : { itemsPerPage: pageSize, currentPage: page }
+          "
+        >
+          <div class="card h-100">
+            <a [routerLink]="['/products', p.id]">
+              <img
+                class="card-img-top mx-auto mt-5 d-block"
+                src="{{ p.image }}"
+                alt="Product Image"
+                style="max-width: 150px; height: 150px; object-fit: contain"
+              />
+            </a>
+
+            <div class="card-body">
+              <h5
+                class="card-title fs-4 text-decoration-none text-dark text-center"
+              >
+                {{ p.title }}
+              </h5>
+              <p class="card-text fs-6 text-center">{{ p.price }} vnđ</p>
+              <div class="mt-auto text-center">
+                <a
+                  [routerLink]="['/products', p.id]"
+                  class="btn btn-primary mt-3"
+                >
+                  Xem chi tiết
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mt-5">
+        <pagination-controls
+          class="text-center"
+          (pageChange)="page = $event"
+        ></pagination-controls>
+      </div>
+    </div>
+
+    <div class="shop">
+      <h2>SHOP</h2>
+      <hr />
+      <div class="shop-img">
+        <img src="../../assets/img/anh4.jpg" alt="" />
+        <img src="../../assets/img/shop2.jpg" alt="" />
+        <img src="../../assets/img/shop3.jpg" alt="" />
+        <img src="../../assets/img/shop4.png" alt="" />
+      </div>
+    </div>
+
+    <div class="blog">
+      <h2>BLOG</h2>
+      <hr />
+      <div class="blog-post">
+        <img class="img-post" src="../../assets/img/blog1.jpg" alt="" />
+        <div class="post-content">
+          <h3>THE ULTIMATE SOFA BUYING GUIDE</h3>
+          <p>
+            The versatility of our living space is more crucial than ever. But
+            buying a sofa might be a difficult undertaking. Your needs and the
+            size of your living area will determine everything, However, don’t
+            worry, were are here to help you
+          </p>
+          <h4>
+            ABOUT<i
+              style="margin-left: 10px"
+              class="fa-solid fa-arrow-right fa-sm"
+            ></i>
+          </h4>
+          <hr />
+        </div>
+      </div>
+      <div class="blog-post">
+        <img class="img-post1" src="../../assets/img/blog1.jpg" alt="" />
+        <div class="post-content">
+          <h3>A BEDROOM MUST HAVE SOME THING LIKE THIS</h3>
+          <p>
+            Your level of comfort when geting into and out of bed can be greatly
+            influenced by the bed frame you choose. It may significantly affect
+            how want your bedroom to feet and look
+          </p>
+          <h4>
+            ABOUT<i
+              style="margin-left: 10px"
+              class="fa-solid fa-arrow-right fa-sm"
+            ></i>
+          </h4>
+          <hr />
+        </div>
+      </div>
+      <div class="blog-post">
+        <img class="img-post1" src="../../assets/img/blog1.jpg" alt="" />
+        <div class="post-content">
+          <h3>WHY IS A TV CONSOLE A MUST IN EVERY HOUSE</h3>
+          <p>
+            People do a lot of research to make sure they purchase the ideal
+            televisoin. And like the rest of us, you want to keep that gorgeous
+            flat srceen in your living or bedroom on a table or stand
+          </p>
+          <h4>
+            ABOUT<i
+              style="margin-left: 10px"
+              class="fa-solid fa-arrow-right fa-sm"
+            ></i>
+          </h4>
+          <hr />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="group">
+  <div class="group-post">
+    <img class="post-img" src="../../assets/img/Group.png" alt="" />
+    <div class="grout-post-content">
+      <h3>High Quality</h3>
+      <p>crafted from top materials</p>
+    </div>
+  </div>
+  <div class="group-post">
+    <img class="post-img" src="../../assets/img/guarantee.png" alt="" />
+    <div class="grout-post-content">
+      <h3>Warranty Protection</h3>
+      <p>Over 2 years</p>
+    </div>
+  </div>
+  <div class="group-post">
+    <img class="post-img" src="../../assets/img/shipping.png" alt="" />
+    <div class="grout-post-content">
+      <h3>Free Shipping</h3>
+      <p>Order over 150 $</p>
+    </div>
+  </div>
+  <div class="group-post">
+    <img class="post-img" src="../../assets/img/customer-support.png" alt="" />
+    <div class="grout-post-content">
+      <h3>24 / 7 Support</h3>
+      <p>Dedicated support</p>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

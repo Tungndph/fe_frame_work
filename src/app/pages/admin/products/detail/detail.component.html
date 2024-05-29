@@ -1,0 +1,43 @@
+<div class="flex-box" *ngIf="product">
+  <div class="left">
+    <div class="big-img">
+      <img src="{{ product.image }}" />
+    </div>
+  </div>
+
+  <div class="right">
+    <div class="pname">{{ product.title }}</div>
+
+    <div
+      class="ratings"
+      [style.width.px]="(product.rating.rate * 90) / 5"
+      title="rating"
+    >
+      <div style="width: 90px">
+        <i class="bx bxs-star"></i>
+        <i class="bx bxs-star"></i>
+        <i class="bx bxs-star"></i>
+        <i class="bx bxs-star"></i>
+        <i class="bx bxs-star"></i>
+      </div>
+    </div>
+    <div class="description">{{ product.description }}</div>
+
+    <div class="price">{{ product.price }} vnđ</div>
+    <div class="size">
+      <p>Size :</p>
+      <div class="psize active">M</div>
+      <div class="psize">L</div>
+      <div class="psize">XL</div>
+      <div class="psize">XXL</div>
+    </div>
+    <div class="quantity">
+      <p>Quantity :</p>
+      <input type="number" min="1" max="5" value="1" />
+    </div>
+    <div class="btn-box">
+      <button class="cart-btn">Add to Cart</button>
+      <button class="buy-btn">Buy Now</button>
+    </div>
+  </div>
+</div>

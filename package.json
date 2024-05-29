@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+ 
+    "dev": "concurrently \"npx json-server db.json\" \"ng serve --o\"",
+    "json-server": "json-server --watch src/assets/db.json --port 3000",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
@@ -21,9 +23,21 @@
     "@angular/platform-server": "^17.3.0",
     "@angular/router": "^17.3.0",
     "@angular/ssr": "^17.3.6",
+    "@cloudinary/angular-5.x": "^1.5.3",
+    "@ionic/angular": "^8.1.1",
+    "bootstrap": "^5.3.3",
     "express": "^4.18.2",
+    "ionicons": "^7.4.0",
+    "ng-angular-popup": "^0.5.2",
+    "ngx-pagination": "^6.0.3",
+    "ngx-toastr": "^18.0.0",
+    "primeflex": "^3.3.1",
+    "primeicons": "^7.0.0",
+    "primeng": "^17.17.0",
     "rxjs": "~7.8.0",
+    "sweetalert2": "^11.11.0",
     "tslib": "^2.3.0",
+    "yargs-parser": "^21.1.1",
     "zone.js": "~0.14.3"
   },
   "devDependencies": {
