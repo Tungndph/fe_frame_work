@@ -21,6 +21,7 @@ import { CategoryService } from '../../../../services/category.service';
 export class ProductListComponent implements OnInit {
   originalProducts: Product[] = [];
   products: Product[] = [];
+   categories: any[] = [];
   filterValue: string = '';
   page: number = 1;
   pageSize: number = 5;
@@ -43,7 +44,13 @@ export class ProductListComponent implements OnInit {
      });
 
   }
-
+loadCategories() {
+    this.categoryService.getCategoryListAdmin().subscribe((data) => {
+      this.categories = data;
+    }, error => {
+      console.error('Error loading categories', error);
+    });
+  }
   loadProducts() {
     this.productService.getAllProducts().subscribe({
       next: (data) => {
@@ -148,4 +155,6 @@ export class ProductListComponent implements OnInit {
       }
     });
   }
+
+
 }

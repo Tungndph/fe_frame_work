@@ -9,11 +9,13 @@ import { CategoryService } from '../../../../services/category.service';
 import { Category } from '../../../../../types/Category';
 import Swal from 'sweetalert2';
 import { switchMap } from 'rxjs';
+import { NgToastModule, NgToastService } from 'ng-angular-popup';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @Component({
   selector: 'app-update-product',
   standalone: true,
-  imports: [FormsModule, NgFor, ReactiveFormsModule, CommonModule],
+  imports: [FormsModule, NgFor, ReactiveFormsModule, CommonModule, NgToastModule, NgxPaginationModule],
   templateUrl: './update-product.component.html',
   styleUrls: ['./update-product.component.css']
 })
@@ -39,6 +41,7 @@ export class UpdateProductComponent implements OnInit {
   constructor(
     private categoryService: CategoryService,
     private route: ActivatedRoute,
+        private toast: NgToastService
   ) {}
 
  ngOnInit(): void {
@@ -76,21 +79,25 @@ export class UpdateProductComponent implements OnInit {
     if (!this.productId) return;
     this.productService.updateProductById(this.productId, this.updateProductForm.value).subscribe({
       next: () => {
-        Swal.fire({
-          icon: 'success',
-          title: 'Cập nhật sản phẩm thành công',
-          showConfirmButton: false,
-          timer: 1000,
-          timerProgressBar: true,
+        this.toast.success({
+          detail: 'SUCCESS',
+          summary: 'Cập nhật sản phẩm thành công',
+          duration: 5000, // Duration of the toast notification
+          sticky: false,
         });
-        this.router.navigate(['/admin/products/list']);
+
+        // Delay navigation to give time for the toast notification to display
+        setTimeout(() => {
+          this.router.navigate(['/admin/products/list']);
+        }, 2000); // 5-second delay to match the toast duration
       },
       error: (error) => {
         console.error(error.message);
-        Swal.fire({
-          icon: 'error',
-          title: 'Lỗi',
-          text: 'Đã có lỗi xảy ra trong quá trình cập nhật sản phẩm.',
+        this.toast.error({
+          detail: 'ERROR',
+          summary: 'Có lỗi xảy ra khi cập nhật sản phẩm',
+          duration: 5000,
+          sticky: true,
         });
         this.loading = false;
       },

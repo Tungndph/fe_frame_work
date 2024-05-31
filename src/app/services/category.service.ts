@@ -16,6 +16,6 @@ export class CategoryService {
     return this.http.get<Category[]>(this.apiAdminUrl); //axios.get(apiUrl)
   }
 
-  
+
 
 }

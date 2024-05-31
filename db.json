@@ -1,13 +1,13 @@
 {
   "products": [
     {
+      "id": "1",
       "title": "Áo Phông Nữ Gucci",
       "price": 150000,
       "description": "Áo thun nam cotton 100% là chiếc áo thời trang dành cho nữ đến từ thương hiệu Gucci nổi tiếng",
       "image": "https://cdn.vuahanghieu.com/unsafe/0x500/left/top/smart/filters:quality(90)/https://admin.vuahanghieu.com/upload/product/2023/09/ao-phong-nu-gucci-navy-with-gg-lame-logo-printed-tshirt-526759-x9w83-4921-mau-xanh-phoi-vang-65052f1220621-16092023112906.jpg",
-      "category": "2",
-      "isShowing": true,
-      "id": "1"
+      "category": "4",
+      "isShowing": true
     },
     {
       "title": "Quần jean nữ",
@@ -32,30 +32,22 @@
       }
     },
     {
-      "id": "4",
       "title": "Váy Nữ Gucci",
-      "description": "Váy Nữ Gucci trẻ trung xinh xắn cho phái đẹp",
       "price": 350000,
-      "quantity": 25,
-      "category": "Váy",
+      "description": "Váy Nữ Gucci trẻ trung xinh xắn cho phái đẹp",
       "image": "https://cdn.vuahanghieu.com/unsafe/0x500/left/top/smart/filters:quality(90)/https://admin.vuahanghieu.com/upload/product/2024/03/vay-nu-gucci-with-bows-in-dark-blue-741563-xway04080-mau-xanh-65f3c4e94c730-15032024104753.jpg",
-      "rating": {
-        "rate": 3.9,
-        "count": 120
-      }
+      "category": "Váy",
+      "isShowing": true,
+      "id": "4"
     },
     {
-      "id": "5",
       "title": "Giày Gucci nam",
-      "description": "Giày Gucci chính hãng  dành cho nam đến từ thương hiệu Gucci nổi tiếng. Đôi giày có thiết kế sang trọng và lịch lãm.",
       "price": 450000,
-      "quantity": 40,
-      "category": "Giày",
+      "description": "Giày Gucci chính hãng  dành cho nam đến từ thương hiệu Gucci nổi tiếng. Đôi giày có thiết kế sang trọng và lịch lãm.",
       "image": "https://cdn.vuahanghieu.com/unsafe/0x500/left/top/smart/filters:quality(90)/https://admin.vuahanghieu.com/upload/product/2023/12/giay-the-thao-gucci-gg-tennis-1977-606111-hvk20-9766-form-to-phoi-mau-size-5-5-656d459328adb-04122023102051.jpg",
-      "rating": {
-        "rate": 3.9,
-        "count": 120
-      }
+      "category": "2",
+      "isShowing": true,
+      "id": "5"
     },
     {
       "id": "6",
@@ -292,17 +284,67 @@
       }
     },
     {
-      "id": "24",
-      "title": "Áo Polo Nam Gucci",
+      "title": "Áo Polo Nam Gucci ",
+      "price": "30000",
       "description": "Áo Polo Nam Gucci là chiếc áo thời trang dành cho nam đến từ thương hiệu Gucci nổi tiếng và được nhiều tín đồ thời trang yêu thích săn đón.",
-      "price": 300000,
-      "quantity": 12,
-      "category": "Áo Polo",
       "image": "https://cdn.vuahanghieu.com/unsafe/0x500/left/top/smart/filters:quality(90)/https://admin.vuahanghieu.com/upload/product/2024/04/ao-polo-nam-gucci-gg-embroidery-cotton-polo-shirt-768631-mau-xanh-navy-size-m-6621ee0962ca5-19042024110737.jpg",
-      "rating": {
-        "rate": 4.6,
-        "count": 100
-      }
+      "category": "Áo Polo",
+      "isShowing": true,
+      "id": "24"
+    },
+    {
+      "id": "de38",
+      "title": "áo đẹp lắm",
+      "price": "10000",
+      "description": "đẹp",
+      "image": "https://picsum.photos/300/200",
+      "category": "2",
+      "isShowing": true
+    },
+    {
+      "title": "sp đepk",
+      "price": "20",
+      "description": "đẹp",
+      "image": "https://picsum.photos/300/200",
+      "category": "4",
+      "isShowing": true,
+      "id": "37bd"
+    },
+    {
+      "id": "4655",
+      "title": "aaaaaaaaaaaaaaaaa",
+      "price": "200000000000",
+      "description": "đẹp",
+      "image": "https://picsum.photos/300/200",
+      "category": "2",
+      "isShowing": true
+    },
+    {
+      "id": "1841",
+      "title": "asssssssssssssss",
+      "price": "20000",
+      "description": "đẹp",
+      "image": "https://picsum.photos/300/200",
+      "category": "1",
+      "isShowing": true
+    },
+    {
+      "id": "e707",
+      "title": "aaaaaaaaaaaaaa",
+      "price": "20",
+      "description": "đepk",
+      "image": "https://picsum.photos/300/200",
+      "category": "1",
+      "isShowing": true
+    },
+    {
+      "title": "sp mới thêm nè",
+      "price": "20000000",
+      "description": "đẹp lắm à nha",
+      "image": "https://picsum.photos/300/200",
+      "category": "1",
+      "isShowing": true,
+      "id": "42e4"
     }
   ],
   "categories": [

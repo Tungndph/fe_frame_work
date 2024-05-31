@@ -1,3 +1,5 @@
+import { Category } from "./Category";
+
 export type Product = {
   id: number;
   title: string;
@@ -10,6 +12,8 @@ export type Product = {
     rate: number;
     count: number;
   };
+  categoryId?: Category;
+  bidInfo?: any;
 
 };
 

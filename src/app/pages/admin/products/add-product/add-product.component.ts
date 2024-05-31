@@ -8,12 +8,16 @@ import { CategoryService } from '../../../../services/category.service';
 import { Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
 
+import { MessageService } from 'primeng/api';
+import { NgToastModule, NgToastService } from 'ng-angular-popup';
+import { NgxPaginationModule } from 'ngx-pagination';
 @Component({
   selector: 'app-add-product',
   standalone: true,
-  imports: [FormsModule, NgFor, NgIf, ReactiveFormsModule],
+  imports: [FormsModule, NgFor, NgIf, ReactiveFormsModule, NgToastModule, NgxPaginationModule],
   templateUrl: './add-product.component.html',
   styleUrls: ['./add-product.component.css'],
+  providers: [MessageService],
 })
 export class AddProductComponent implements OnInit {
   loading: boolean = false;
@@ -21,6 +25,8 @@ export class AddProductComponent implements OnInit {
   productService = inject(ProductService);
   file: any;
   preview: any;
+
+
 
   addProductForm = new FormGroup({
     title: new FormControl('', [Validators.required, Validators.minLength(6)]),
@@ -35,8 +41,9 @@ export class AddProductComponent implements OnInit {
 
   constructor(
     private categoryService: CategoryService,
-    private router: Router
-  ) {}
+    private router: Router,
+    private toast: NgToastService
+  ) { }
 
   ngOnInit(): void {
     this.categoryService.getCategoryListAdmin().subscribe({
@@ -45,32 +52,46 @@ export class AddProductComponent implements OnInit {
     });
   }
 
-  onSubmit() {
+
+    onSubmit() {
     console.log(this.addProductForm.value);
     this.loading = true;
+
     // Call API, navigate, show notification
     this.productService.createProduct(this.addProductForm.value).subscribe({
       next: () => {
-        Swal.fire({
-          icon: 'success',
-          title: 'Thêm sản phẩm thành công',
-          showConfirmButton: false,
-          timer: 1000,
-          timerProgressBar: true,
+        this.toast.success({
+          detail: 'SUCCESS',
+          summary: 'Thêm sản phẩm mới thành công',
+          duration: 5000,
+          sticky: false,
         });
-        this.router.navigate(['/admin/products/list']);
+
+
+
+        setTimeout(() => {
+          this.router.navigate(['/admin/products/list']);
+        }, 2000);
       },
       error: (error) => {
         console.error(error.message);
-        Swal.fire({
-          icon: 'error',
-          title: 'Lỗi',
-          text: 'Đã có lỗi xảy ra trong quá trình thêm sản phẩm.',
+        this.toast.error({
+          detail: 'ERROR',
+          summary: 'API Not Found',
+          duration: 5000,
+          sticky: true,
+        });
+        this.toast.error({
+          detail: 'ERROR',
+          summary: 'Có lỗi xảy ra khi thêm sản phẩm',
+          duration: 5000,
+          sticky: true,
         });
         this.loading = false;
       },
     });
   }
+
 
   uploadFile(event: any) {
     this.file = event.target.files[0];

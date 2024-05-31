@@ -3,7 +3,6 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
- 
     "dev": "concurrently \"npx json-server db.json\" \"ng serve --o\"",
     "json-server": "json-server --watch src/assets/db.json --port 3000",
     "build": "ng build",
