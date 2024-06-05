@@ -1,5 +1,5 @@
 .wrapper {
-  max-width: 420px;
+  max-width: 450px;
   min-height: 500px;
   margin: 80px auto;
   padding: 40px 30px 30px 30px;
@@ -83,4 +83,21 @@
     margin: 30px 20px;
     padding: 40px 15px 15px 15px;
   }
+}
+
+.eye-icon {
+  cursor: pointer; /* Make the icon clickable */
+  margin-left: 10px; /* Adjust spacing as needed */
+}
+
+.form-field {
+  position: relative;
+}
+
+.eye-icon {
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
 }

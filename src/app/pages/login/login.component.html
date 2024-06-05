@@ -1,9 +1,6 @@
 <div class="wrapper">
   <div class="logo">
-    <img
-      src="https://www.freepnglogos.com/uploads/twitter-logo-png/twitter-bird-symbols-png-logo-0.png"
-      alt=""
-    />
+    <img src="../../assets/img/twitter-bird.png" alt="" />
   </div>
   <div class="text-center mt-4 name">LOGIN</div>
   <form class="p-3 mt-3">
@@ -11,9 +8,10 @@
       <i class="bx bxs-user"></i>
       <input type="text" name="userName" id="userName" placeholder="Username" />
     </div>
-    <div class="form-field d-flex align-items-center">
+    <div class="form-field d-flex align-items-center " style="padding-right: 15px;">
       <i class="bx bxs-key"></i>
-      <input type="password" name="password" id="pwd" placeholder="Password" />
+      <input [type]="hide ? 'password' : 'text'" name="password" id="pwd" placeholder="Password" />
+      <i class="bx" [ngClass]="hide ? 'bx-hide' : 'bx-show'" (click)="toggleVisibility()"></i>
     </div>
     <button class="btn mt-3">Login</button>
   </form>

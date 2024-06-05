@@ -1,13 +1,13 @@
 {
   "products": [
     {
-      "id": "1",
-      "title": "Áo Phông Nữ Gucci",
+      "title": "0000000",
       "price": 150000,
       "description": "Áo thun nam cotton 100% là chiếc áo thời trang dành cho nữ đến từ thương hiệu Gucci nổi tiếng",
       "image": "https://cdn.vuahanghieu.com/unsafe/0x500/left/top/smart/filters:quality(90)/https://admin.vuahanghieu.com/upload/product/2023/09/ao-phong-nu-gucci-navy-with-gg-lame-logo-printed-tshirt-526759-x9w83-4921-mau-xanh-phoi-vang-65052f1220621-16092023112906.jpg",
-      "category": "4",
-      "isShowing": true
+      "category": "2",
+      "isShowing": true,
+      "id": "1"
     },
     {
       "title": "Quần jean nữ",
@@ -345,6 +345,15 @@
       "category": "1",
       "isShowing": true,
       "id": "42e4"
+    },
+    {
+      "id": "e979",
+      "title": "999999",
+      "price": "999",
+      "description": "9999",
+      "image": "https://picsum.photos/300/200",
+      "category": "3",
+      "isShowing": true
     }
   ],
   "categories": [
@@ -367,6 +376,28 @@
     {
       "id": "5",
       "title": "Son"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "username": "admin",
+      "password": "hashed_password",
+      "email": "admin@example.com",
+      "fullname": "John Doe"
+    },
+    {
+      "id": "2",
+      "username": "user1",
+      "password": "hashed_password",
+      "email": "user1@example.com",
+      "fullname": "Jane Doe"
+    },
+    {
+      "id": "effd",
+      "username": "ndt",
+      "email": "ndt@gmail.com",
+      "password": "123"
     }
   ]
 }
