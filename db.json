@@ -1,7 +1,7 @@
 {
   "products": [
     {
-      "title": "0000000",
+      "title": "Áo polo gucci",
       "price": 150000,
       "description": "Áo thun nam cotton 100% là chiếc áo thời trang dành cho nữ đến từ thương hiệu Gucci nổi tiếng",
       "image": "https://cdn.vuahanghieu.com/unsafe/0x500/left/top/smart/filters:quality(90)/https://admin.vuahanghieu.com/upload/product/2023/09/ao-phong-nu-gucci-navy-with-gg-lame-logo-printed-tshirt-526759-x9w83-4921-mau-xanh-phoi-vang-65052f1220621-16092023112906.jpg",
@@ -336,24 +336,6 @@
       "image": "https://picsum.photos/300/200",
       "category": "1",
       "isShowing": true
-    },
-    {
-      "title": "sp mới thêm nè",
-      "price": "20000000",
-      "description": "đẹp lắm à nha",
-      "image": "https://picsum.photos/300/200",
-      "category": "1",
-      "isShowing": true,
-      "id": "42e4"
-    },
-    {
-      "id": "e979",
-      "title": "999999",
-      "price": "999",
-      "description": "9999",
-      "image": "https://picsum.photos/300/200",
-      "category": "3",
-      "isShowing": true
     }
   ],
   "categories": [
@@ -380,24 +362,74 @@
   ],
   "users": [
     {
-      "id": "1",
-      "username": "admin",
-      "password": "hashed_password",
-      "email": "admin@example.com",
-      "fullname": "John Doe"
+      "email": "sss@gmail.com",
+      "password": "$2a$10$4pB0KEgOPP/tt2IfpQ5ZneRk/kQbM7gMcRODLbcw7iyrAFK/rOHB6",
+      "username": "tung",
+      "confirmPassword": "12345678",
+      "id": 1
     },
     {
-      "id": "2",
-      "username": "user1",
-      "password": "hashed_password",
-      "email": "user1@example.com",
-      "fullname": "Jane Doe"
+      "email": "ssss@gmail.com",
+      "password": "$2a$10$J2mdWGlw4.s6FrjS5NFLxeU7uAv1fF1Fr205HD/l0woEDh4Rrqdim",
+      "username": "sss",
+      "confirmPassword": "12345678",
+      "id": 2
     },
     {
-      "id": "effd",
-      "username": "ndt",
-      "email": "ndt@gmail.com",
-      "password": "123"
+      "email": "tung@gmail.com",
+      "password": "$2a$10$sRT2uW9CTwmRipxXCIT.BOb6OBD3r3rnYXy3lH9Wb169br18.uf3e",
+      "username": "tùng",
+      "confirmPassword": "12345678",
+      "id": 3
+    },
+    {
+      "email": "tungsss@gmail.com",
+      "password": "$2a$10$AnVSyuK8KfNyd3g8Fj.aNOgj1N2dkN.5XCRKCmO/wMmAcEqMlR73S",
+      "username": "tug",
+      "confirmPassword": "1222222222",
+      "id": 4
+    },
+    {
+      "email": "tung0801@gmail.com",
+      "password": "$2a$10$vCvwngxTW.x1vmY9T9JJ9ORoxpdZmsrkc7sWoLk1ciVv0k9zhcm6q",
+      "username": "tung",
+      "confirmPassword": "1111111111111111111",
+      "id": 5
+    },
+    {
+      "email": "nguyenductung@gmail.com",
+      "password": "$2a$10$cjVMy/mdW.sLsTbrgDeKTuqCndM/x5omWOrg5ldXKGgls9ikx9FI.",
+      "username": "nguyenductung",
+      "confirmPassword": "12345678",
+      "id": 6
+    },
+    {
+      "email": "tungchip@gmail.com",
+      "password": "$2a$10$U5GRnI5CPMLEbJIw13ui1.Mt/NfrFY5ZSWJ4KGN4YbVyqFeBQkqLe",
+      "username": "tungchip",
+      "confirmPassword": "123456",
+      "id": 7
+    },
+    {
+      "email": "Tungdzjj@gmail.com",
+      "password": "$2a$10$OvLbc.UVi5L82IoyUmpnfefSVjMrBJJTsXcMk0NAzOOn9USooJgiy",
+      "username": "tung",
+      "confirmPassword": "123456",
+      "id": 8
+    },
+    {
+      "email": "nguyentung@gmail.com",
+      "password": "$2a$10$dFPpcys5TvvVOQwhi13Bw.GZhWNnD1DI4mfMFfUZEewlBxDLVJGAW",
+      "username": "nguyentung",
+      "confirmPassword": "123654",
+      "id": 9
+    },
+    {
+      "email": "ductung@gmail.com",
+      "password": "$2a$10$s9TLfdF3LvVsohMV3Xmaoe6XPG7XHVpqkjpVj1l3jRcgEGA7D2IRS",
+      "username": "ductung@gmail.com",
+      "confirmPassword": "123456",
+      "id": 10
     }
   ]
 }

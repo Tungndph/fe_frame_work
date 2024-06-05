@@ -1,4 +1,4 @@
-export type User = {
+export type RegisterForm = {
   id: string;
   fullname: string;
   email: string;
@@ -9,5 +9,5 @@ export type UserResponse = {
   total: number;
   page: number;
   limit: number;
-  data: User[];
+  data: RegisterForm[];
 };

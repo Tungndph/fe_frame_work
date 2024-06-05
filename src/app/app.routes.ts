@@ -10,6 +10,7 @@ import { UpdateProductComponent } from './pages/admin/products/update-product/up
 
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
+import { UserListComponent } from './pages/admin/user-list/user-list.component';
 
 export const routes: Routes = [
   {
@@ -33,6 +34,10 @@ export const routes: Routes = [
         path: 'products/update/:id',
         component: UpdateProductComponent,
       },
+      {
+        path: 'user-list',
+        component: UserListComponent
+      }
     ],
   },
   {
