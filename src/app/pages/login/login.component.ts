@@ -7,6 +7,7 @@ import { UserService } from '../../services/user.service';
 import { NgToastModule, NgToastService } from 'ng-angular-popup';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { UserLoginRes, UserLoginResponse } from '../../../types/User';
 
 @Component({
   selector: 'app-login',
@@ -41,12 +42,15 @@ export class LoginComponent {
   ngOnInit() { }
 
   onSubmit() {
-
     this.loading = true;
 
-    // Call API, navigate, show notification
     this.userService.login(this.login.value).subscribe({
-      next: () => {
+      next: (data) => {
+        // Assuming your server sends back an accessToken upon successful login
+        localStorage.setItem('token', (data as UserLoginRes).token);
+        localStorage.setItem('userId', (data as UserLoginRes).user._id);
+
+
         this.toast.success({
           detail: 'SUCCESS',
           summary: 'Đăng nhập thành công',
@@ -55,7 +59,8 @@ export class LoginComponent {
         });
 
         setTimeout(() => {
-          this.router.navigate(['admin/products/list']);
+          // this.router.navigate(['admin/products/list']);
+          console.log(this.router.navigate(['admin/products/list']));
         }, 2000);
       },
       error: (error) => {

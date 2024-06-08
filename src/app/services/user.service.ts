@@ -2,15 +2,23 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { AbstractControl, AsyncValidatorFn, ValidationErrors } from '@angular/forms';
 import { catchError, map, Observable, of } from 'rxjs';
+import { RegisterForm } from '../../types/User';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
   http = inject(HttpClient);
-  apiUrl = 'http://localhost:3000';
+  apiUrl = 'http://localhost:3000/auth';
+  apiUsers = 'http://localhost:3000/users';
   constructor() { }
+  getUser() {
+    return this.http.get<RegisterForm[]>(this.apiUrl);
+  }
 
+  deleteUser(id: string) {
+    return this.http.delete(`${this.apiUrl}/${id}`);
+  }
 
   register(data: any): Observable<any> {
     return this.http.post(`${this.apiUrl}/register`, data);  // Adjust the endpoint according to your backend

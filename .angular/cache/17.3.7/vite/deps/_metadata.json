@@ -1,73 +1,79 @@
 {
-  "hash": "6ca69c92",
-  "configHash": "3661083d",
-  "lockfileHash": "fa4e9ff9",
-  "browserHash": "c4a1636d",
+  "hash": "55a06852",
+  "configHash": "d2d93df3",
+  "lockfileHash": "3d3d8c51",
+  "browserHash": "6b540788",
   "optimized": {
     "@angular/common": {
       "src": "../../../../../node_modules/@angular/common/fesm2022/common.mjs",
       "file": "@angular_common.js",
-      "fileHash": "ec2e477b",
+      "fileHash": "2cad5a2c",
       "needsInterop": false
     },
     "@angular/common/http": {
       "src": "../../../../../node_modules/@angular/common/fesm2022/http.mjs",
       "file": "@angular_common_http.js",
-      "fileHash": "fbf56a47",
+      "fileHash": "000fd18e",
       "needsInterop": false
     },
     "@angular/core": {
       "src": "../../../../../node_modules/@angular/core/fesm2022/core.mjs",
       "file": "@angular_core.js",
-      "fileHash": "a85010d0",
+      "fileHash": "36a88c2a",
       "needsInterop": false
     },
     "@angular/forms": {
       "src": "../../../../../node_modules/@angular/forms/fesm2022/forms.mjs",
       "file": "@angular_forms.js",
-      "fileHash": "ef8b6ed6",
+      "fileHash": "fd0897f3",
       "needsInterop": false
     },
     "@angular/platform-browser": {
       "src": "../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
       "file": "@angular_platform-browser.js",
-      "fileHash": "35392a5e",
+      "fileHash": "9bfe1776",
       "needsInterop": false
     },
     "@angular/router": {
       "src": "../../../../../node_modules/@angular/router/fesm2022/router.mjs",
       "file": "@angular_router.js",
-      "fileHash": "2fe1c1df",
+      "fileHash": "dc565409",
       "needsInterop": false
     },
     "ng-angular-popup": {
       "src": "../../../../../node_modules/ng-angular-popup/fesm2022/ng-angular-popup.mjs",
       "file": "ng-angular-popup.js",
-      "fileHash": "0f3612e8",
+      "fileHash": "f7a3cf50",
+      "needsInterop": false
+    },
+    "ngx-countdown": {
+      "src": "../../../../../node_modules/ngx-countdown/fesm2022/ngx-countdown.mjs",
+      "file": "ngx-countdown.js",
+      "fileHash": "2023a456",
       "needsInterop": false
     },
     "ngx-pagination": {
       "src": "../../../../../node_modules/ngx-pagination/fesm2020/ngx-pagination.mjs",
       "file": "ngx-pagination.js",
-      "fileHash": "7e44d4b7",
+      "fileHash": "d3afc7d2",
       "needsInterop": false
     },
     "primeng/api": {
       "src": "../../../../../node_modules/primeng/fesm2022/primeng-api.mjs",
       "file": "primeng_api.js",
-      "fileHash": "d68fea05",
+      "fileHash": "853254e9",
       "needsInterop": false
     },
     "rxjs": {
       "src": "../../../../../node_modules/rxjs/dist/esm5/index.js",
       "file": "rxjs.js",
-      "fileHash": "5e59ec15",
+      "fileHash": "47ce3a81",
       "needsInterop": false
     },
     "sweetalert2": {
       "src": "../../../../../node_modules/sweetalert2/dist/sweetalert2.all.js",
       "file": "sweetalert2.js",
-      "fileHash": "3f83d0c0",
+      "fileHash": "60d01677",
       "needsInterop": true
     }
   },

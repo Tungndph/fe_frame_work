@@ -25,42 +25,43 @@ export class UpdateProductComponent implements OnInit {
   router = inject(Router);
   productId!: string;
   productService = inject(ProductService);
-  file: any;
-  preview: any;
-  categoryList: Category[] = [];
 
+  categoryList: Category[] = [];
+  minDate = new Date().toISOString().slice(0, 16);
   updateProductForm: FormGroup = new FormGroup({
     title: new FormControl('', [Validators.required, Validators.minLength(6)]),
     price: new FormControl('', [Validators.required, Validators.min(0)]),
     description: new FormControl('', Validators.required),
     image: new FormControl('', Validators.required),
-    category: new FormControl('', Validators.required),
-    isShowing: new FormControl(true)
+    category: new FormControl('', [Validators.required]),
+    isShow: new FormControl(true),
+    bidTime: new FormControl(''),
+    startAt: new FormControl(''),
   });
 
   constructor(
     private categoryService: CategoryService,
     private route: ActivatedRoute,
-        private toast: NgToastService
-  ) {}
+    private toast: NgToastService
+  ) { }
 
- ngOnInit(): void {
+  ngOnInit(): void {
     // Lấy ID từ route và gọi dịch vụ để lấy thông tin sản phẩm
-    this.route.params.pipe(
-      switchMap(params => {
-        this.productId = params['id'];
-        return this.productService.getDetailProductById(this.productId);
-      })
-    ).subscribe(
-      product => {
-        // Cập nhật dữ liệu vào form
-        this.updateProductForm.patchValue(product);
-      },
-      error => {
-        // Hiển thị thông báo lỗi và ghi log lỗi
-        console.error('Error fetching product details:', error);
-      }
-    );
+    this.route.params.subscribe((param) => {
+      this.productId = param['id'];
+      this.productService.getDetailProductById(param['id']).subscribe({
+        next: (data) => {
+          const now = new Date(data.startAt);
+          now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+          const startAt = now.toISOString().slice(0, 16);
+          this.updateProductForm.patchValue({ ...data, startAt: startAt });
+        },
+        error: (error) => {
+          // show thong bao error
+          console.error(error);
+        },
+      });
+    });
 
     // Fetch categories
     this.categoryService.getCategoryListAdmin().subscribe(
@@ -104,15 +105,5 @@ export class UpdateProductComponent implements OnInit {
     });
   }
 
-  uploadFile(event: any) {
-    this.file = event.target.files[0];
-    const reader = new FileReader();
-    reader.readAsDataURL(this.file);
-    reader.onload = () => {
-      this.preview = reader.result;
-      this.updateProductForm.patchValue({
-        image: this.preview
-      });
-    };
-  }
+
 }

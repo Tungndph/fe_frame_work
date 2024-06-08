@@ -179,3 +179,54 @@ nav ul i{
 .right{
   margin-left: 70px;
 }
+.card {
+  width: 400px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card h2 {
+  margin-bottom: 20px;
+}
+
+.bid-form {
+  margin-bottom: 20px;
+}
+
+.bid-history {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.bid-item {
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+.bid-item:last-child {
+  border-bottom: none;
+}
+
+.max-bid {
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.btn-bid {
+  width: 100%;
+}
+
+.text-danger {
+  color: #dc3545;
+  font-size: 80%;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 10px;
+  }
+}

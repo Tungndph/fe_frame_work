@@ -21,12 +21,12 @@ import { NgxPaginationModule } from 'ngx-pagination';
 })
 export class AddProductComponent implements OnInit {
   loading: boolean = false;
-
+  categories: Category[] = [];
   productService = inject(ProductService);
   file: any;
   preview: any;
 
-
+  minDate = new Date().toISOString().slice(0, 16);
 
   addProductForm = new FormGroup({
     title: new FormControl('', [Validators.required, Validators.minLength(6)]),
@@ -34,7 +34,9 @@ export class AddProductComponent implements OnInit {
     description: new FormControl('', Validators.required),
     image: new FormControl('', Validators.required),
     category: new FormControl('', Validators.required),
-    isShowing: new FormControl(true)
+    isShow: new FormControl(true),
+    bidTime: new FormControl(''),
+    startAt: new FormControl(''),
   });
 
   categoryList: Category[] = [];
@@ -45,20 +47,26 @@ export class AddProductComponent implements OnInit {
     private toast: NgToastService
   ) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.categoryService.getCategoryListAdmin().subscribe({
-      next: (categories) => (this.categoryList = categories),
-      error: (err) => console.error('Error fetching categories:', err),
+      next: (data) => {
+        this.categories = data;
+      },
+      error: (error) => {
+        // show error
+        console.error(error.message);
+      },
     });
   }
 
 
-    onSubmit() {
+
+  onSubmit() {
     console.log(this.addProductForm.value);
     this.loading = true;
 
     // Call API, navigate, show notification
-    this.productService.createProduct(this.addProductForm.value).subscribe({
+    this.productService.createProduct({ ...this.addProductForm.value, endAt: new Date() }).subscribe({
       next: () => {
         this.toast.success({
           detail: 'SUCCESS',
@@ -93,15 +101,5 @@ export class AddProductComponent implements OnInit {
   }
 
 
-  uploadFile(event: any) {
-    this.file = event.target.files[0];
-    const reader = new FileReader();
-    reader.readAsDataURL(this.file);
-    reader.onload = () => {
-      this.preview = reader.result;
-      this.addProductForm.patchValue({
-        image: this.preview
-      });
-    };
-  }
+
 }
