@@ -27,9 +27,7 @@ export class ProductService {
   createProduct(product: any) {
     return this.http.post<any>(this.apiUrl, product);
   }
-  // createProduct(data: ProductForm) {
-  //   return this.http.post(this.apiUrl, data);
-  // }
+
   getLastProductId(): Observable<number> {
     return this.http.get<number>(`${this.apiUrl}/lastProductId`);
   }

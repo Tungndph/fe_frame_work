@@ -15,13 +15,9 @@
 
       <p class="price">Giá: {{ product.price }} vnđ</p>
 
-      <!-- <div class="danh-gia">
+      <div class="danh-gia">
         <div class="sao">
-          <div
-            class="crop"
-            [style.width.px]="(product.rating.rate * 90) / 5"
-            title="rating"
-          >
+          <div class="crop" title="rating">
             <div style="width: 90px">
               <span class="fa fa-star text-warning"></span>
               <span class="fa fa-star text-warning"></span>
@@ -31,10 +27,8 @@
             </div>
           </div>
         </div>
-        <span class="so-luong-danh-gia"
-          > Customer Review</span
-        >
-      </div> -->
+        <span class="so-luong-danh-gia"> 100 Customer Review</span>
+      </div>
       <p class="text-sp">
         {{ product.description }}
       </p>
@@ -120,7 +114,7 @@
                 <label for="price">Giá của bạn</label>
                 <input
                   type="number"
-                  class="form-control"
+                  class="form-control p-2 mt-2 mb-3"
                   id="price"
                   formControlName="price"
                   placeholder="Enter your bid price"

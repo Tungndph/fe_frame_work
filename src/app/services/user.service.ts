@@ -26,9 +26,7 @@ export class UserService {
   login(data: any): Observable<any> {
     return this.http.post(`${this.apiUrl}/login`, data);  // Adjust the endpoint according to your backend
   }
-  // checkEmail(email: string): Observable<any> {
-  //   return this.http.get(`${this.apiUrl}/check-email`, { params: { email } });
-  // }
+
   emailExists(): AsyncValidatorFn {
     return (control: AbstractControl): Observable<ValidationErrors | null> => {
       if (!control.value) {

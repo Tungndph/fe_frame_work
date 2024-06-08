@@ -11,6 +11,7 @@ export type Product = {
   startAt: Date;
   endAt: Date;
   bidPriceMax: number;
+
 };
 
 export type ProductAdd = Omit<Product, '_id' | 'bids' | 'bidPriceMax'> & {
