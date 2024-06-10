@@ -358,7 +358,6 @@
       "username": "nguyenductung",
       "confirmPassword": "1223456",
       "id": 7
-<<<<<<< HEAD
     },
     {
       "email": "tung@gmail.com",
@@ -388,36 +387,11 @@
       "confirmPassword": "123456",
       "id": 11
     },
-    {
-      "email": "tungnguyen@gmail.com",
-      "password": "$2a$10$jCMUNZCGmE1agEck0IlGEOW8JdVrXJZr2KfkNgu3a7hNVo6rEvEze",
-=======
-    },
-    {
-      "email": "tung@gmail.com",
-      "password": "$2a$10$XozaIyb8o46h6ZSi7RIbQe/gesetMox8IegLyKwFrTIsPDZs6xwjW",
->>>>>>> 5a559b7d1b635bef387d490a3d0c4e9f579af2dc
-      "username": "tung",
-      "confirmPassword": "123456",
-      "id": 12
-    },
-    {
-<<<<<<< HEAD
-      "email": "TungChip@gmail.com",
-      "password": "$2a$10$u/MbXV3lCWnGtkd4XiueTeC6CvOwfuZWYITS5luCwdg819eNUpgae",
-      "username": "TungChip",
-=======
-      "email": "tungss@gmail.com",
-      "password": "$2a$10$baXq4N/SUN2AWGzw3s6lQOTHI1hDn0JWSgWPM2.TsaAohmkcEtKkK",
-      "username": "tung",
-      "confirmPassword": "123456",
-      "id": 9
-    },
+
     {
       "email": "tungiu@gmail.com",
       "password": "$2a$10$LYXSSPuCdktV/F2RFEnAa.6B9JcRb5aTa8pdJDeJ/I09bizb61z/K",
       "username": "tung",
->>>>>>> 5a559b7d1b635bef387d490a3d0c4e9f579af2dc
       "confirmPassword": "123456",
       "id": 13
     }

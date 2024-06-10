@@ -46,7 +46,7 @@ export class LoginComponent {
 
     this.userService.login(this.login.value).subscribe({
       next: (data) => {
-<<<<<<< HEAD
+
         // Debug: log user data
         console.log('User data:', data.user);
 
@@ -54,12 +54,12 @@ export class LoginComponent {
         localStorage.setItem('token', (data as { accessToken: string }).accessToken)
 
         localStorage.setItem('user', JSON.stringify(data.user));
-=======
+
         // Assuming your server sends back an accessToken upon successful login
         localStorage.setItem('token', (data as UserLoginRes).token);
         localStorage.setItem('userId', (data as UserLoginRes).user._id);
 
->>>>>>> 5a559b7d1b635bef387d490a3d0c4e9f579af2dc
+
 
         this.toast.success({
           detail: 'SUCCESS',
@@ -69,12 +69,12 @@ export class LoginComponent {
         });
 
         setTimeout(() => {
-<<<<<<< HEAD
+
           this.router.navigate(['/admin/products/list']);
-=======
+
           // this.router.navigate(['admin/products/list']);
           console.log(this.router.navigate(['admin/products/list']));
->>>>>>> 5a559b7d1b635bef387d490a3d0c4e9f579af2dc
+
         }, 2000);
       },
       error: (error) => {
