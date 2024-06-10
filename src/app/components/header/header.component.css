@@ -40,7 +40,7 @@ nav ul li a {
 }
 .icons i {
   width: 30px;
-  padding: 0 25px;
+  padding: 0 20px;
 }
 .search-container {
   margin-top: 35px;
@@ -130,3 +130,10 @@ nav ul li a {
 .show {
   display: block;
 }
+ .text-gradient {
+            font-size: 2em; /* kích thước chữ */
+            font-weight: bold;
+            background: linear-gradient(45deg, red, rgba(255, 255, 0, 0.682), rgba(0, 0, 255, 0.359)); /* phối 3 màu */
+            -webkit-background-clip: text;
+            color: transparent;
+        }

@@ -1,10 +1,8 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RouterLink } from '@angular/router';
-import { Product } from '../../../types/Products';
-import { ProductService } from '../../services/product.service';
-import { map } from 'rxjs/operators'; // Import the map operator
+import { RouterLink, Router } from '@angular/router';
 import { NgIf } from '@angular/common';
+import { ProductService } from '../../services/product.service';
 
 @Component({
   selector: 'app-header',
@@ -13,13 +11,40 @@ import { NgIf } from '@angular/common';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent {
-  filterValue: string = ''; // Khai báo thuộc tính filterValue ở đây
+export class HeaderComponent implements OnInit {
+  filterValue: string = '';
 
+  router = inject(Router);
+  isLoggedIn: boolean = false;
+  username: string | null = null;
   constructor(private searchService: ProductService) { }
+  ngOnInit() {
+    this.checkLoginStatus();
+  }
 
+  checkLoginStatus() {
+    const token = localStorage.getItem('token');
+    const user = JSON.parse(localStorage.getItem('user') || '{}');
+
+    if (token && user) {
+      this.isLoggedIn = true;
+      this.username = user.username;
+      console.log(this.username);
+    } else {
+      this.isLoggedIn = false;
+      this.username = null;
+    }
+  }
+
+
+  logout() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    this.isLoggedIn = false;
+    this.username = null;
+    this.router.navigate(['/']);
+  }
   updateSearch(value: string): void {
     this.searchService.setSearchValue(value);
   }
-
 }

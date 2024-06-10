@@ -1,13 +1,29 @@
 export type RegisterForm = {
   id: string;
-  fullname: string;
+  username: string;
   email: string;
   password: string;
 };
 
-export type UserResponse = {
-  total: number;
-  page: number;
-  limit: number;
-  data: RegisterForm[];
+export type LoginForm = {
+  id: string;
+  email: string;
+  password: string;
+};
+export type UserLoginResponse = {
+  accessToken: string;
+  users: {
+    id: string;
+    email: string;
+  }
+};
+
+export type UserLoginRes = {
+  token: string;
+  user: {
+    _id: string;
+    email: string;
+    role: string;
+    username: string;
+  };
 };

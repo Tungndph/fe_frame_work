@@ -32,8 +32,20 @@
     </form>
   </div>
   <div class="icons">
-    <a routerLink="/login"><i style="color: #000" class="bx bxs-user"></i></a>
-    <i class="bx bx-heart"></i>
-    <a href=""><i style="color: #000" class="bx bxs-cart-alt"></i></a>
+    <ng-container *ngIf="isLoggedIn; else loggedOut">
+      <span class="text-gradient  fs-4">{{ username }}</span>
+      <a class="fs-4" (click)="logout()" style="cursor: pointer; color: #000"
+        ><i class="bx bxs-log-in-circle"></i
+      ></a>
+    </ng-container>
+    <ng-template #loggedOut>
+      <a class="fs-4" style="color: #000" routerLink="/login"
+        ><i class="bx bxs-user"></i
+      ></a>
+    </ng-template>
+    <a style="color: #000" class="fs-4"><i class="bx bxs-heart"></i></a>
+    <a class="fs-4" style="color: #000" href=""
+      ><i class="bx bxs-cart-alt"></i
+    ></a>
   </div>
 </header>

@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { AbstractControl, AsyncValidatorFn, ValidationErrors } from '@angular/forms';
 import { catchError, map, Observable, of } from 'rxjs';
+import { RegisterForm } from '../../types/User';
 
 @Injectable({
   providedIn: 'root'
@@ -9,8 +10,15 @@ import { catchError, map, Observable, of } from 'rxjs';
 export class UserService {
   http = inject(HttpClient);
   apiUrl = 'http://localhost:3000';
+  apiUsers = 'http://localhost:3000/users';
   constructor() { }
+  getUser() {
+    return this.http.get<RegisterForm[]>(this.apiUsers);
+  }
 
+  deleteUser(id: string) {
+    return this.http.delete(`${this.apiUsers}/${id}`);
+  }
 
   register(data: any): Observable<any> {
     return this.http.post(`${this.apiUrl}/register`, data);  // Adjust the endpoint according to your backend
@@ -18,9 +26,7 @@ export class UserService {
   login(data: any): Observable<any> {
     return this.http.post(`${this.apiUrl}/login`, data);  // Adjust the endpoint according to your backend
   }
-  // checkEmail(email: string): Observable<any> {
-  //   return this.http.get(`${this.apiUrl}/check-email`, { params: { email } });
-  // }
+
   emailExists(): AsyncValidatorFn {
     return (control: AbstractControl): Observable<ValidationErrors | null> => {
       if (!control.value) {

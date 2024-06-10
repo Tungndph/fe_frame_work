@@ -327,15 +327,6 @@
       "image": "https://picsum.photos/300/200",
       "category": "1",
       "isShowing": true
-    },
-    {
-      "id": "e707",
-      "title": "aaaaaaaaaaaaaa",
-      "price": "20",
-      "description": "đepk",
-      "image": "https://picsum.photos/300/200",
-      "category": "1",
-      "isShowing": true
     }
   ],
   "categories": [
@@ -362,74 +353,53 @@
   ],
   "users": [
     {
-      "email": "sss@gmail.com",
-      "password": "$2a$10$4pB0KEgOPP/tt2IfpQ5ZneRk/kQbM7gMcRODLbcw7iyrAFK/rOHB6",
-      "username": "tung",
-      "confirmPassword": "12345678",
-      "id": 1
-    },
-    {
-      "email": "ssss@gmail.com",
-      "password": "$2a$10$J2mdWGlw4.s6FrjS5NFLxeU7uAv1fF1Fr205HD/l0woEDh4Rrqdim",
-      "username": "sss",
-      "confirmPassword": "12345678",
-      "id": 2
-    },
-    {
-      "email": "tung@gmail.com",
-      "password": "$2a$10$sRT2uW9CTwmRipxXCIT.BOb6OBD3r3rnYXy3lH9Wb169br18.uf3e",
-      "username": "tùng",
-      "confirmPassword": "12345678",
-      "id": 3
-    },
-    {
-      "email": "tungsss@gmail.com",
-      "password": "$2a$10$AnVSyuK8KfNyd3g8Fj.aNOgj1N2dkN.5XCRKCmO/wMmAcEqMlR73S",
-      "username": "tug",
-      "confirmPassword": "1222222222",
-      "id": 4
-    },
-    {
-      "email": "tung0801@gmail.com",
-      "password": "$2a$10$vCvwngxTW.x1vmY9T9JJ9ORoxpdZmsrkc7sWoLk1ciVv0k9zhcm6q",
-      "username": "tung",
-      "confirmPassword": "1111111111111111111",
-      "id": 5
-    },
-    {
-      "email": "nguyenductung@gmail.com",
-      "password": "$2a$10$cjVMy/mdW.sLsTbrgDeKTuqCndM/x5omWOrg5ldXKGgls9ikx9FI.",
+      "email": "myha@gmail.com",
+      "password": "$2a$10$1fckUJZwF55kmtSBgTSEgumiISJ1KsE6y4r1MF0zFWii6tHvR0SL6",
       "username": "nguyenductung",
-      "confirmPassword": "12345678",
-      "id": 6
-    },
-    {
-      "email": "tungchip@gmail.com",
-      "password": "$2a$10$U5GRnI5CPMLEbJIw13ui1.Mt/NfrFY5ZSWJ4KGN4YbVyqFeBQkqLe",
-      "username": "tungchip",
-      "confirmPassword": "123456",
+      "confirmPassword": "1223456",
       "id": 7
     },
     {
-      "email": "Tungdzjj@gmail.com",
-      "password": "$2a$10$OvLbc.UVi5L82IoyUmpnfefSVjMrBJJTsXcMk0NAzOOn9USooJgiy",
+      "email": "tung@gmail.com",
+      "password": "$2a$10$XozaIyb8o46h6ZSi7RIbQe/gesetMox8IegLyKwFrTIsPDZs6xwjW",
       "username": "tung",
       "confirmPassword": "123456",
       "id": 8
     },
     {
-      "email": "nguyentung@gmail.com",
-      "password": "$2a$10$dFPpcys5TvvVOQwhi13Bw.GZhWNnD1DI4mfMFfUZEewlBxDLVJGAW",
-      "username": "nguyentung",
-      "confirmPassword": "123654",
+      "email": "tungss@gmail.com",
+      "password": "$2a$10$baXq4N/SUN2AWGzw3s6lQOTHI1hDn0JWSgWPM2.TsaAohmkcEtKkK",
+      "username": "tung",
+      "confirmPassword": "123456",
       "id": 9
     },
     {
-      "email": "ductung@gmail.com",
-      "password": "$2a$10$s9TLfdF3LvVsohMV3Xmaoe6XPG7XHVpqkjpVj1l3jRcgEGA7D2IRS",
-      "username": "ductung@gmail.com",
+      "email": "tungiu@gmail.com",
+      "password": "$2a$10$LYXSSPuCdktV/F2RFEnAa.6B9JcRb5aTa8pdJDeJ/I09bizb61z/K",
+      "username": "tung",
       "confirmPassword": "123456",
       "id": 10
+    },
+    {
+      "email": "tungndph35030@fpt.edu.vn",
+      "password": "$2a$10$lw2zMj1IMvphWMXSvySlsuZSPFlOz0zRCU6d6CtxDZBIYshyfLkXm",
+      "username": "tungndph",
+      "confirmPassword": "123456",
+      "id": 11
+    },
+    {
+      "email": "tungnguyen@gmail.com",
+      "password": "$2a$10$jCMUNZCGmE1agEck0IlGEOW8JdVrXJZr2KfkNgu3a7hNVo6rEvEze",
+      "username": "tung",
+      "confirmPassword": "123456",
+      "id": 12
+    },
+    {
+      "email": "TungChip@gmail.com",
+      "password": "$2a$10$u/MbXV3lCWnGtkd4XiueTeC6CvOwfuZWYITS5luCwdg819eNUpgae",
+      "username": "TungChip",
+      "confirmPassword": "123456",
+      "id": 13
     }
   ]
 }

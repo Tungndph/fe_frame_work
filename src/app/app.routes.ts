@@ -1,4 +1,4 @@
-import { Routes } from '@angular/router';
+import { Routes, CanActivateFn, CanActivate } from '@angular/router';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { ProductListComponent } from './pages/admin/products/list/list.component';
 import { AddProductComponent } from './pages/admin/products/add-product/add-product.component';
@@ -11,11 +11,15 @@ import { UpdateProductComponent } from './pages/admin/products/update-product/up
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { UserListComponent } from './pages/admin/user-list/user-list.component';
+import { adminGuard } from './guards/admin.guard';
 
 export const routes: Routes = [
   {
     path: 'admin',
+    canActivate: [adminGuard],
+
     component: AdminLayoutComponent,
+
     children: [
       {
         path: 'products/list',
@@ -36,8 +40,8 @@ export const routes: Routes = [
       },
       {
         path: 'user-list',
-        component: UserListComponent
-      }
+        component: UserListComponent,
+      },
     ],
   },
   {
@@ -56,21 +60,6 @@ export const routes: Routes = [
     path: 'products/:id',
     component: ProductDetailComponent,
   },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   { path: '**', component: NotfoundComponent },
 ];
