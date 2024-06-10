@@ -1,7 +1,7 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { AddProductForm, Product, ProductAdd } from '../../types/Products';
+import { AddProductForm, Product, ProductForm } from '../../types/Products';
 import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
@@ -24,12 +24,10 @@ export class ProductService {
   }
 
   // createProduct
-  // createProduct(product:any):Observable<any>{
-  //   return this.http.post<Product>(this.apiUrl, product);
-  // }
-  createProduct(data: Partial<AddProductForm>) {
-    return this.http.post(this.apiUrl, data);
+  createProduct(product: any) {
+    return this.http.post<any>(this.apiUrl, product);
   }
+
   getLastProductId(): Observable<number> {
     return this.http.get<number>(`${this.apiUrl}/lastProductId`);
   }
@@ -39,7 +37,7 @@ export class ProductService {
     return this.http.put(`${this.apiUrl}/${id}`, data);
   }
   //delete product
-  deleteProductById(id: number) {
+  deleteProductById(id: string) {
     return this.http.delete(`${this.apiUrl}/${id}`);
   }
 

@@ -21,7 +21,7 @@ import { CategoryService } from '../../../../services/category.service';
 export class ProductListComponent implements OnInit {
   originalProducts: Product[] = [];
   products: Product[] = [];
-   categories: any[] = [];
+  categories: any[] = [];
   filterValue: string = '';
   page: number = 1;
   pageSize: number = 5;
@@ -30,21 +30,21 @@ export class ProductListComponent implements OnInit {
 
   constructor(
     private productService: ProductService,
-      private categoryService: CategoryService,
+    private categoryService: CategoryService,
     private toast: NgToastService
   ) { }
 
-   categoryList: Category[] = [];
+  categoryList: Category[] = [];
 
   ngOnInit(): void {
     this.loadProducts();
-     this.categoryService.getCategoryListAdmin().subscribe({
+    this.categoryService.getCategoryListAdmin().subscribe({
       next: (categories) => (this.categoryList = categories),
       error: (err) => console.error('Error fetching categories:', err),
-     });
+    });
 
   }
-loadCategories() {
+  loadCategories() {
     this.categoryService.getCategoryListAdmin().subscribe((data) => {
       this.categories = data;
     }, error => {
@@ -122,7 +122,7 @@ loadCategories() {
     }
   }
 
-  handleDeleteProduct(id: number) {
+  handleDeleteProduct(id: string) {
     Swal.fire({
       title: 'Bạn có chắc chắn không?',
       text: 'Bạn không thể khôi phục hành động này!',
@@ -137,7 +137,7 @@ loadCategories() {
         this.productService.deleteProductById(id).subscribe({
           next: () => {
             this.originalProducts = this.originalProducts.filter(
-              (product) => product.id !== id
+              (product) => product._id !== id
             );
             this.filter(); // Reapply filter after deleting
             Swal.fire({

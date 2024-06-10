@@ -7,13 +7,13 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class CategoryService {
- apiAdminUrl = 'http://localhost:3000/categories'; // khai bao apiUrl
+  apiAdminUrl = 'http://localhost:3000/categories'; // khai bao apiUrl
   http = inject(HttpClient); // inject bien http
 
-  constructor() {}
+  constructor() { }
 
-  getCategoryListAdmin(): Observable<Category[]> {
-    return this.http.get<Category[]>(this.apiAdminUrl); //axios.get(apiUrl)
+  getCategoryListAdmin() {
+    return this.http.get<Category[]>(this.apiAdminUrl);
   }
 
 

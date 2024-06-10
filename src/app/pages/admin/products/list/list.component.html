@@ -30,22 +30,22 @@
       <th>Image</th>
       <th>Price</th>
       <th>Description</th>
-      <th>Categoty</th>
+
       <th>Action</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let p of products">
-      <th>{{ p.id }}</th>
+    <tr *ngFor="let p of products; let i = index">
+      <th>{{ i + 1 }}</th>
       <td>
         <a
           style="text-decoration: none; color: #000"
-          [routerLink]="['/admin/products/detail', p.id]"
+          [routerLink]="['/admin/products/detail', p._id]"
           >{{ p.title }}</a
         >
       </td>
       <td>
-        <a [routerLink]="['/admin/products/detail', p.id]"
+        <a [routerLink]="['/admin/products/detail', p._id]"
           ><img
             style="width: 100px; cursor: pointer"
             src="{{ p.image }}"
@@ -55,17 +55,15 @@
       <td>{{ p.price }}</td>
       <td>{{ p.description }}</td>
 
-     <td>{{ p.category }}</td>
-
       <td>
         <button
-          [routerLink]="['/admin/products/update', p.id]"
+          [routerLink]="['/admin/products/update', p._id]"
           class="btn btn-primary mx-2"
         >
           Edit
         </button>
 
-        <button (click)="handleDeleteProduct(p.id)" class="btn btn-danger">
+        <button (click)="handleDeleteProduct(p._id)" class="btn btn-danger">
           Delete
         </button>
       </td>
